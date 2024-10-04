@@ -25,5 +25,5 @@ func main() {
 	fmt.Print("i is ", i, "\n")
 	fmt.Println("i is", i)
 	//fmt.Printf("i is %d\n", i)
-	fmt.Printf("i is %s\n", i)
+	fmt.Printf("i is %sg\n", i)
 }
