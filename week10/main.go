@@ -24,13 +24,19 @@ func main() {
 	}
 
 	counts := 0
-	i := 2
-	for i < n {
-		if n%i == 0 {
-			counts = counts + 1
+
+	if n <= 1 {
+		counts = -1
+	} else {
+		i := 2
+		for i < n {
+			if n%i == 0 {
+				counts = counts + 1
+			}
+			i++
 		}
-		i++
 	}
+
 	if counts == 0 {
 		fmt.Printf("%d는(은) 소수입니다.", n)
 	} else {
