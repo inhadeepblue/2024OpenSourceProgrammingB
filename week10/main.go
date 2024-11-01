@@ -28,16 +28,20 @@ func main() {
 	var isPrime bool = true
 	if n <= 1 {
 		isPrime = false
-	} else {
-		i := 2
-		//for i < n {
+	} else if n == 2 {
+		isPrime = true
+	} else if n%2 == 0 { // 2를 제외한 모든 짝수는 소수가 아님.
+		isPrime = false
+	} else { // 3이상의 홀수
+		i := 3
 		for i <= int(math.Sqrt(float64(n))) {
 			if n%i == 0 {
 				isPrime = false
-				break // 1과 자기자신을 제외한 첫 번째 약수가 발견 되면 반복문 종료
+				break
 			}
-			fmt.Printf("%d ", i) // 반복 횟수 확인용 코드
-			i++
+			fmt.Printf("%d ", i)
+			//i++
+			i = i + 2
 		}
 	}
 
