@@ -2,57 +2,25 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"reflect"
 )
 
 func main() {
-	// var dates [3]time.Time
-	// dates[0] = time.Unix(0, 0)
-	// dates[2] = time.Unix(1708012346, 0)
-	// fmt.Println(dates[0], dates[1], dates[2]) // 1970-01-01 00:00:00, zero value, 2024-02-16 ...
+	// Create a slice by make function
+	var gpaSlice []float64
+	gpaSlice = make([]float64, 3)
+	gpaSlice[0] = 4.1
+	gpaSlice[1] = 4.5
+	gpaSlice[2] = 3.9
+	fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 
-	// var dates [3]time.Time = [3]time.Time{time.Unix(0, 0), time.Unix(1, 0), time.Unix(1708012346, 0)}
-	// fmt.Println(dates[0], dates[1], dates[2]) // 1970-01-01 00:00:00, +1, 2024-02-16 ...
+	// Create a slice by slice literal
+	// gpaSlice := []float64{4.1, 4.5, 3.9} // slice literal
+	// fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 
-	// dates := [3]time.Time{time.Unix(0, 0), time.Unix(1, 0), time.Unix(1708012346, 0)}
-	// fmt.Println(dates[0], dates[1], dates[2]) // 1970-01-01 00:00:00, +1, 2024-02-16 ...
-
-	// dates := [3]time.Time{
-	// 	time.Unix(0, 0),
-	// 	time.Unix(1, 0),
-	// 	time.Unix(1708012346, 0), // need comma
-	// }
-	// fmt.Println(dates[0], dates[1], dates[2])
-
-	dates := [3]time.Time{
-		time.Unix(0, 0),
-		time.Unix(1, 0),
-		time.Unix(1708012346, 0)}
-	// fmt.Println(dates[0], dates[1], dates[2])
-	// fmt.Println(dates)         // array
-	// fmt.Printf("%#v\n", dates) // array literal
-
-	//for i := 0; i <= 7; i++ {
-	// for i := 0; i < len(dates); i++ {
-	// 	fmt.Println(i, dates[i])
-	// }
-
-	for i, date := range dates { // like python for in, SAFE!
-		fmt.Println(i, date)
-	}
-
-	// for _, date := range dates { // like python for in, SAFE!
-	// 	fmt.Println(date)
-	// }
+	// Create a slice by slicing an existing array
+	// gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23} // array := array literal
+	// fmt.Println(gpas, reflect.TypeOf(gpas))
+	// gpaSlice := gpas[1:4] // slice := slicing array
+	// fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 }
-
-/*
-import random
-numbers = [random.randint(1, 100) for _ in range(10)]
-print(numbers)
-#for i in range(len(numbers)):
-#for i in range(11):  # Runtime error
-#	print(numbers[i], end=' ')
-for number in numbers:  # safe
-	print(number, end=' ')
-*/
