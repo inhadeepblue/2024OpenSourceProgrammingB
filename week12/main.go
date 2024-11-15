@@ -28,7 +28,31 @@ func main() {
 		time.Unix(0, 0),
 		time.Unix(1, 0),
 		time.Unix(1708012346, 0)}
-	fmt.Println(dates[0], dates[1], dates[2])
-	fmt.Println(dates)         // array
-	fmt.Printf("%#v\n", dates) // array literal
+	// fmt.Println(dates[0], dates[1], dates[2])
+	// fmt.Println(dates)         // array
+	// fmt.Printf("%#v\n", dates) // array literal
+
+	//for i := 0; i <= 7; i++ {
+	// for i := 0; i < len(dates); i++ {
+	// 	fmt.Println(i, dates[i])
+	// }
+
+	for i, date := range dates { // like python for in, SAFE!
+		fmt.Println(i, date)
+	}
+
+	// for _, date := range dates { // like python for in, SAFE!
+	// 	fmt.Println(date)
+	// }
 }
+
+/*
+import random
+numbers = [random.randint(1, 100) for _ in range(10)]
+print(numbers)
+#for i in range(len(numbers)):
+#for i in range(11):  # Runtime error
+#	print(numbers[i], end=' ')
+for number in numbers:  # safe
+	print(number, end=' ')
+*/
