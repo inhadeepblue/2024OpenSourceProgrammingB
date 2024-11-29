@@ -3,22 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	ages := make(map[string]int)
-
-	var name string
-	var age int
-	for {
-		fmt.Print("Name? ")
-		fmt.Scanln(&name)
-		if name == "q" {
-			break
-		}
-		fmt.Print("Age? ")
-		fmt.Scanln(&age)
-
-		ages[name] = age
+	var student1 struct {
+		id   int
+		name string
+		gpa  float32
 	}
-	for k, v := range ages {
-		fmt.Printf("%s is %d years old~\n", k, v)
+	student1.id = 20241234
+	student1.name = "Son Heungmin"
+	student1.gpa = 4.5
+	fmt.Println(student1.gpa)
+	var student2 struct {
+		id   int
+		name string
+		gpa  float32
 	}
+	student2.id = 20244321
+	student2.name = "Seo Jihye"
+	student2.gpa = 4.43
+	fmt.Println(student2.id)
 }
